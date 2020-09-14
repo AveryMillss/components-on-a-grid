@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  line-height: 1.5;
+  background-color: #f2f1ed;
 }
 
 *,
@@ -15,12 +17,24 @@ img {
 header {
   /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
   display: contents;
+  grid-area: header;
+}
+
+body {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "figure figure";
 }
 
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
+  grid-area: figure;
 }
 
 figure {
@@ -30,29 +44,39 @@ figure {
 
 .pano {
   position: relative;
+  grid-column: 1/ -1;
+  grid-row: 1/ -1;
 }
 
 .logo {
-  position: absolute;
-  z-index: 2;
+  grid-column: 1;
+  grid-row: 2;
   width: 14rem;
+  z-index: 1;
 }
 
 nav {
   position: absolute;
+
+}
+
+nav ul {
+  list-style-type: none;
+  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 nav a {
-  text-decoration: none;
-  font-family: "Goergia", serif;
+  font-family: Goergia, serif;
   color: #fff;
   font-size: 2rem;
+  font-weight: bold;
 }
 
 h2 {
-  font-family: "Patua One", serif;
-  font-size: 2rem;
-  color: #30658D;
+  font-family: "Patua One", sans-serif;
+  color: #30658d;
   margin: 0;
   padding-top: 1rem;
 }
