@@ -16,3 +16,49 @@ header {
   /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
   display: contents;
 }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+figure {
+  margin: 0;
+  padding-top: .5em;
+}
+
+.pano {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  z-index: 2;
+  width: 14rem;
+}
+
+nav {
+  position: absolute;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: "Goergia", serif;
+  color: #fff;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: "Patua One", serif;
+  font-size: 2rem;
+  color: #30658D;
+  margin: 0;
+  padding-top: 1rem;
+}
+
+figure p {
+  margin: 0;
+  padding-top: 1rem;
+  line-height: 1.5;
+}
